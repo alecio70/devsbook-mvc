@@ -6,9 +6,10 @@ use \src\handlers\LoginHandler;
 
 class HomeController extends Controller {
 
-    private $loggedUser;
+     private $loggedUser;
 
     public function __construct() {
+        $loggedUser = '';
         $this->$loggedUser = LoginHandler::checkLogin();
 
         if($this->$loggedUser === false) {
